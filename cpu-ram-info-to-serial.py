@@ -19,6 +19,7 @@ import os
 import platform
 import sys
 import importlib
+import signal
 
 #----------------------------------------------
 #               Check dependencies
@@ -42,18 +43,16 @@ except ImportError, e:
 #Check Platform    
 myPlatform=''
 if platform.system() == 'Windows':
-        myPlatform="Windows"
-        for pac in packagesInstall:
-                os.system('start cmd /k pip install ' + str(pac))
-                print("Installing " + str(pac))
-                importlib.import_module(pac)
+        myPlatform="Windows" 
 elif platform.system() == 'Linux':
         myPlatform="Linux"
-        for pac in packagesInstall:
-                print("Installing " + str(pac))
-                os.system('pip install ' + str(pac))
-                importlib.import_module(pac)
 print("My platform: " + myPlatform)
+
+for pac in packagesInstall:
+        os.system('pip install ' + str(pac))
+        print("Installing " + str(pac))
+        importlib.import_module(pac)
+
 #----------------------------------------------
 
 """
@@ -87,15 +86,36 @@ class mySerial(object):
                 self.port=port
                 self.baud=baud
                 self.timeout=timeout
+                while 1:
+                        try:
+                                self.ser = serial.Serial(str(self.port), self.baud, timeout=self.timeout)
+                                self.ser.close()
+                                self.ser.open()
+                                break
+                        except:
+                                print("USB is not connected") 
+                                
+                        if handler.SIGINT:
+                                print("Exit")
+                                sys.exit()
+                        time.sleep(1)
 
         def send(self, cpu, ram):
-                ser = serial.Serial(self.port, self.baud, timeout=self.timeout)
-                ser.close()
-                ser.open()
                 print ("Cpu: " + str(cpu) + " ram: " + str(ram))
-                ser.write(str(cpu)+"|"+str(ram))
+                self.ser.write(str(cpu)+"|"+str(ram))
                 time.sleep(0.1)
-                ser.close()
+
+        def exit(self):
+                self.ser.close()
+
+class SIGINT_handler():
+    def __init__(self):
+        self.SIGINT = False
+
+    def signal_handler(self, signal, frame):
+        self.SIGINT = True
+handler = SIGINT_handler()
+signal.signal(signal.SIGINT, handler.signal_handler)
 
 #Create PC info interface
 load=PCLoad()
@@ -103,6 +123,7 @@ load=PCLoad()
 port=sys.argv[1]
 print("Connecting to: " + str(port))
 toUSB = mySerial(str(port),9600,0.5)
+
 
 #Send packages FOREVER!
 while(1):
@@ -114,4 +135,9 @@ while(1):
                 toUSB.send(cpu, ram)
         except:
                 print("USB is not connected")
+        
+        if handler.SIGINT:
+                toUSB.exit()
+                print("Exit")
+                break
         time.sleep(0.4)

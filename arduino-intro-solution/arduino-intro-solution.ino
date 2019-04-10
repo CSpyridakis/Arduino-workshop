@@ -27,8 +27,8 @@ void setup(){
         lcd.backlight();
 
         /// Εμφανίζουμε ένα μήνυμα καλοσωρίσματος και περιμένουμε 500 miliseconds
-        lcd.setCursor(0,0);
-        lcd.print("Welcome to");
+        lcd.setCursor(1,0);
+        lcd.print("Welcome to the");
         lcd.setCursor(0,1);
         lcd.print("Arduino Workshop");
         delay(500);
