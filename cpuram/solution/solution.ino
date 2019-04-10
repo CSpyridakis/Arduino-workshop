@@ -1,3 +1,18 @@
+/**
+	Author : Spyridakis Christos   
+   	Created Date : 10/4/2019
+   	Last Updated : 10/4/2019
+   	Email : spyridakischristos@gmail.com
+	
+	Description: 	
+		Σε αυτό το πρόγραμμα διαβάζονται από την σειριακή θύρα 
+		πακέτα τα οποία περιέχουν πληροφορίες σχετικά με το ποσοστό
+		χρήσης του cpu και της ram και εμφανίζονται σε μία 
+		Liquid Crystal Display (LCD)
+
+   	Dependencies: LiquidCrystal_I2C.h
+*/
+
 #include <Wire.h> 
 #include <LiquidCrystal_I2C.h>
 
