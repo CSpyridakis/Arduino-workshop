@@ -142,12 +142,20 @@ def main():
 	load=PCLoad()
 	#Create Serial interface
 	if(sys.argv[1]=="-h"):
-		print("Usage: " + str(sys.argv[0]) + " -p [PORT_NUMBER]")
+		print("Usage: " + str(sys.argv[0]) + " [OPTION] [PORT_NUMBER]")
 		print("Usage: " + str(sys.argv[0]) + " [PORT]")
+		print("\n[Options]:")
+		print("-p\t  /dev/ttyUSBX on linux | COMX on Windows")
+		print("-pA\t  /dev/ttyACMX on linux | COMX on Windows")
 		sys.exit()
 	elif(sys.argv[1]=="-p"):
 		if(myPlatform=="Linux"):
 			port="/dev/ttyUSB"+sys.argv[2]
+		elif(myPlatform=="Windows"):
+			port="COM"+sys.argv[2]
+	elif(sys.argv[1]=="-pA"):
+		if(myPlatform=="Linux"):
+			port="/dev/ttyACM"+sys.argv[2]
 		elif(myPlatform=="Windows"):
 			port="COM"+sys.argv[2]
 	else:
