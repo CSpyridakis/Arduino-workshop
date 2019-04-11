@@ -111,8 +111,8 @@ class mySerial(object):
 			time.sleep(1)
 
 	def send(self, cpu, ram):
-		print ("Cpu: " + str(cpu) + " ram: " + str(ram))
 		self.ser.write(str(cpu)+"|"+str(ram))
+		print ("Cpu: " + str(cpu) + " ram: " + str(ram))
 		time.sleep(0.1)
 
 	def exit(self):
