@@ -1,9 +1,9 @@
 # Arduino-workshop
 
 Για να τρέξουν οι κώδικες χρειάζεται να έχουμε την 
-τελευταία έκδοση του arduino 1.8.9 όπως επίσης και 
-την python2.7 με την πιο πρόσφατη έκδοση του pip2 
-(προτεινόμενη 8.1.1) 
+τελευταία έκδοση του arduino (1.8.9 ή νεότερη) όπως 
+επίσης την python2.7 με την πιο πρόσφατη έκδοση 
+του pip2 (προτεινόμενη 8.1.1 ή νεότερη) 
 
 ## Εγκατάσταση
 
@@ -30,7 +30,7 @@ https://repo.anaconda.com/archive/Anaconda2-2019.03-Windows-x86_64.exe
 package manager
 
 ## Πώς ξέρω ότι είμαι έτοιμος;
-Μόλις εγκαταστήσετε τα παραπάνω τρέξτε το εξής σε κάποιο terminal 
+Μαζί σας δίνετε το python script "runme.py". Μόλις εγκαταστήσετε τα παραπάνω τρέξτε το εξής σε κάποιο terminal 
 ή από το Anaconda Prompt
 
 ### Windows
@@ -52,7 +52,7 @@ USB is not connected
 ```
 
 ### Linux
-Μέσω του terminal μεταφερθείτε στο folder του project και τρέξτε την παρακάτω εντολή
+Μέσω του terminal μεταφερθείτε στο folder path του project και τρέξτε την παρακάτω εντολή
 
 ```
 $ python runme.py -p 1
@@ -69,4 +69,26 @@ USB is not connected
 USB is not connected
 USB is not connected
 ...
+```
+
+#### Troubleshooting
+Αν για κάποιο λόγο (αφορά τους χρήστες του Linux, στα Windows με το Anaconda δεν θα έχετε πρόβλημα) δεν μπορούν να εγκατασταθούν αυτόματα τα πακέτα και σας πετάξει το παρακάτω error message:
+```
+...
+Python2.7 and latest version of pip2 needed
+```
+
+Δοκιμάστε να εγκαταστήσετε μόνοι σας μέσω του pip2 τα παρακάτω dependencies και ξανα δοκιμάστε να τρέξετε το script.
+
+```
+psutil
+serial (Δοκιμάστε πρώτα να ξανα τρέξετε το runme.py, πιθανόν να το έχετε ήδη)
+```
+
+## Επιπλέον
+Τόσο στο Anaconda Prompt στα windows όσο και στο terminal σε linux μπορείτε να τρέξετε το script δίνοντας του το όρισμα -h ώστε να δείτε πως μπορείτε να το χρησιμοποιήσετε
+
+e.q.
+```
+$ python runme.py -h
 ```
