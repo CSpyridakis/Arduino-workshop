@@ -72,17 +72,17 @@ USB is not connected
 ```
 
 #### Troubleshooting
-Αν για κάποιο λόγο (αφορά τους χρήστες του Linux, στα Windows με το Anaconda δεν θα έχετε πρόβλημα) δεν μπορούν να εγκατασταθούν αυτόματα τα πακέτα και σας πετάξει το παρακάτω error message:
+Αν για κάποιο λόγο (αφορά τους χρήστες του Linux, στα Windows με το Anaconda δεν θα έχετε λογικά πρόβλημα) δεν μπορούν να εγκατασταθούν αυτόματα τα πακέτα και σας πετάξει το παρακάτω error message:
 ```
 ...
-Python2.7 and latest version of pip2 needed
+Please try to install psutil and pyserial manually
 ```
 
 Δοκιμάστε να εγκαταστήσετε μόνοι σας μέσω του pip2 τα παρακάτω dependencies και ξανα δοκιμάστε να τρέξετε το script.
 
 ```
 psutil
-serial (Δοκιμάστε πρώτα να ξανα τρέξετε το runme.py, πιθανόν να το έχετε ήδη)
+pyserial
 ```
 
 ## Επιπλέον
@@ -91,4 +91,10 @@ serial (Δοκιμάστε πρώτα να ξανα τρέξετε το runme.py
 e.q.
 ```
 $ python runme.py -h
+```
+
+Τέλος αν θέλετε να δείτε την μορφή του πακέτου σε κάθε αποστολή μπορείτε να δώσετε και το όρισμα -D ώστε να εμφανιστεί
+e.q.
+```
+$ python runme.py COM1 -D
 ```
