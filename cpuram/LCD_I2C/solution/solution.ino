@@ -33,7 +33,7 @@ String ramValue="0",cpuValue="0";
  *        αρχικοποιήσεις
  */
 void setup(){
-	// Αρχικοποιεί την σειριακή θύρα σε bandwidth 9600 bits/sec
+	// Αρχικοποιεί την σειριακή θύρα σε baud rate 9600 symbols/sec
 	Serial.begin(9600);
 
 	// Αρχικοποιούμε την οθόνη, μετά από αυτό το σημείο
@@ -61,7 +61,7 @@ void loop(){
 		// Από τα δεδομένα παίρνουμε την τιμή του ram load
 		ramValue = getRamValue(serialData);
 		// Εμφανίζουμε τα δεδομένα στην σειρακή θύρα
-		Serial.println("Packet: " + serialData + " CPU: " + cpuValue + " Ram: " + ramValue);
+		//Serial.println("Packet: " + serialData + " CPU: " + cpuValue + " Ram: " + ramValue);
 		// Εμφανίζουμε τα δεδομένα στην LCD
 		printInScreen(cpuValue, ramValue);
 	}
