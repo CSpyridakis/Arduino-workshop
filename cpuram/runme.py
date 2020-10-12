@@ -46,7 +46,7 @@ try:
 except ImportError:
 	os.system('pip2 install pyserial')
 
-#Import them if the just installed
+#Import them if they just installed
 try:
 	import psutil
         from serial import Serial
