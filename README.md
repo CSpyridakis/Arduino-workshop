@@ -1,6 +1,6 @@
 # Arduino-workshop
 
-<b>Το συγκεκριμένο repository είναι μέρος του εισαγωγικού στον κόσμο του arduino workshop με τίτλο 'Arduino 2 Inspire' το οποίο διοργάνωσε το παράρτημα του [Student Branch της IEEE](https://ieeesb.tuc.gr/) του Πολυτεχνείου Κρήτης τον Απρίλιο του 2019 και είχα την τιμή να είμαι εισηγητής σε αυτό.</b>
+<b>Το συγκεκριμένο repository είναι μέρος του εισαγωγικού στον κόσμο του arduino, workshop με τίτλο 'Arduino 2 Inspire', το οποίο διοργάνωσε το παράρτημα του [Student Branch της IEEE](https://ieeesb.tuc.gr/) του Πολυτεχνείου Κρήτης τον Απρίλιο του 2019 και είχα την τιμή να είμαι εισηγητής σε αυτό.</b>
 
 ![Workshop photo](./workshop-photo.jpg)
 
