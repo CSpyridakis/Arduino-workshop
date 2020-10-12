@@ -2,6 +2,8 @@
 
 <b>Το συγκεκριμένο repository είναι μέρος του εισαγωγικού στον κόσμο του arduino workshop με τίτλο 'Arduino 2 Inspire' το οποίο διοργάνωσε το παράρτημα του [Student Branch της IEEE](https://ieeesb.tuc.gr/) του Πολυτεχνείου Κρήτης τον Απρίλιο του 2019 και είχα την τιμή να είμαι εισηγητής σε αυτό.</b>
 
+![Workshop photo](./workshop-photo.jpg)
+
 <hr>
 
 Για να τρέξουν οι κώδικες χρειάζεται να έχουμε την 
@@ -23,7 +25,7 @@ https://downloads.arduino.cc/arduino-1.8.9-windows.exe
 https://repo.anaconda.com/archive/Anaconda2-2019.03-Windows-x86_64.exe
 
 
-### Για Linux
+### Για Linux:
 
 #### Arduino 
 Κατεβάστε το Arduino IDE από το official site.
